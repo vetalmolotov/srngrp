@@ -1,0 +1,21 @@
+$mobile-max-width: 1024px;
+
+@mixin desktop {
+  @media screen and (min-width: #{$mobile-max-width}) {
+    @content;
+  }
+}
+
+@mixin flex-v {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-h {
+  display: flex;
+  justify-content: center;
+}
+@mixin flex-vh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

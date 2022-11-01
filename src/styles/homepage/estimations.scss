@@ -1,0 +1,68 @@
+.appEstimations {
+  @include flex-h;
+  width: 100%;
+  background: #fff;
+  &Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 1202px);
+    padding: 24px 24px 48px;
+    background: $estimations-background;
+    border-radius: 24px;
+    margin-bottom: 44px;
+    @include desktop {
+      margin-bottom: 48px;
+      padding: 64px 24px 24px;
+    }
+    &__title {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 36px;
+      color: #FFFFFF;
+      text-align: left;
+      margin-bottom: 16px;
+      @include desktop {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+    }
+  }
+  &Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 978px);
+    padding: 24px 16px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    @include desktop {
+      padding: 48px 24px;
+    }
+    &__title {
+      width: min(100%, 320px);
+      font-weight: 500;
+      font-size: 23px;
+      line-height: 32px;
+      text-align: center;
+      color: #000000;
+      margin: 0 0 16px 0;
+    }
+    &__input {
+      width: min(100%, 320px);
+      margin: 0 0 8px 0;
+    }
+    &__label {
+      width: min(100%, 320px);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: left;
+      color: $label-text-color;
+      margin: 0 0 16px 0;
+    }
+    &__button {
+      width: min(100%, 320px);
+    }
+  }
+}

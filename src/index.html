@@ -6,12 +6,155 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
 
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
 
   <body>
-    <div id="root"></div>
+
+    <main class="app">
+      <header class="appHeader">
+        <a href="#" class="appHeader__logo"></a>
+        <a href="#estimations" class="appHeader__link">Link to form</a>
+      </header>
+      <section class="appBanner">
+        <div class="appBanner__text">
+
+          <h3>How <span>Over 410,000 Americans</span> Increased Their Property Value <span>In Under 6 Hours<sup>*</sup></span> With This Simple Upgrade.</h3>
+
+          <p>Ideal for detached and semi-detached homes with sloped roofs. </p>
+        </div>
+        <div class="appBanner__image">
+          <img src="/assets/picMain.png" alt="">
+          <a class="appBanner__link" href="https://google.com" target="_blank">
+            <img
+              src="/assets/picMainTitleMob.png"
+              srcset="/assets/picMainTitle.png 1025w"
+              alt=""
+            >
+          </a>
+        </div>
+      </section>
+
+      <section class="appFeature">
+        <ul class="appFeaturelist">
+          <li class="appFeaturelist__guarantee">
+            <h4></h4>
+            <p>Lifetime warranty with 100%  no-clog guarantee</p>
+          </li>
+          <li class="appFeaturelist__fits">
+            <h4></h4>
+            <p>Fits most homes</p>
+          </li>
+          <li class="appFeaturelist__saving">
+            <h4></h4>
+            <p>Installs over existing gutters saving you thousands</p>
+          </li>
+          <li class="appFeaturelist__rating">
+            <h4></h4>
+            <span></span>
+            <p>Сustomer rating </p>
+          </li>
+        </ul>
+        <div class="appFeatureGuards appFeatureGuards--mobile">
+          <div class="appFeatureGuards__moneybox"></div>
+          <p>
+            You will be surprised how affordable gutter guards are!
+          </p>
+        </div>
+      </section>
+
+      <section class="appEstimations" id="estimations">
+        <div class="appEstimationsContent">
+          <div class="appFeatureGuards appFeatureGuards--desktop">
+            <div class="appFeatureGuards__moneybox"></div>
+            <p>
+              You will be surprised how affordable gutter guards are!
+            </p>
+          </div>
+          <h3 class="appEstimationsContent__title">
+            See How Much Gutter Guards Cost In The XX, XXX Area
+          </h3>
+          <div class="appEstimationsForm">
+            <h3 class="appEstimationsForm__title">What is your ZIP Code?</h3>
+            <input type="text" class="appEstimationsForm__input inputField" placeholder="Enter ZIP Code">
+            <label class="appEstimationsForm__label">Free, no-obligation estimates.</label>
+            <button class="appEstimationsForm__button buttonPrimary" id="openModal">Get estimate</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="appFooter">
+        <a href="#" class="appFooter__logo"></a>
+        <menu class="appFooter__menu">
+          <li>
+            <a href="#">Terms of Use</a>
+          </li>
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#">Cookie Policy</a>
+          </li>
+          <li>
+            <a href="#">Do Not Sell My Personal Information</a>
+          </li>
+          <li>
+            <a href="#">Contact us</a>
+          </li>
+        </menu>
+      </footer>
+
+    </main>
+
+    <dialog
+      class="appModal"
+      id="appModal"
+    >
+      <header class="appModalHeading">
+        <progress
+          class="appProgressBar"
+          max="100"
+          value="50"
+          id="progressBar"
+        ></progress>
+        <button class="appModal__close" id="closeModal"></button>
+      </header>
+      <section class="appModalContent">
+        <form method="dialog" class="appModal__form">
+
+          <div class="appModalSteps appModalSteps__step01">
+            <h3>Are you homeowner or authorized to make property changes?</h3>
+            <fieldset class="appModalSteps__auth">
+              <input type="radio" id="yes" value="Yes" name="homeowner">
+              <label for="yes" class="appModalSteps__radio">
+                <p class="iconYes"></p>
+                <span>Yes</span>
+              </label>
+              <input type="radio" id="no" value="No" name="homeowner">
+              <label for="no" class="appModalSteps__radio">
+                <p class="iconNo"></p>
+                <span>No</span>
+              </label>
+            </fieldset>
+            <button type="button" class="buttonPrimary appModalSteps__button" id="next">Next</button>
+          </div>
+
+          <div class="appModalSteps appModalSteps__step02 appModalSteps--hide">
+            <h3>Who should I prepare this estimate for?</h3>
+            <p>Your choice: <strong>Yes</strong></p>
+            <fieldset class="appModalSteps__prepare">
+              <input class="inputField" type="text" placeholder="Full name">
+              <input class="inputField" type="text" placeholder="Email address">
+            </fieldset>
+            <button type="submit" class="buttonPrimary appModalSteps__button" id="submit">Next</button>
+            <p class="appModalSteps__inform"><span></span>Safe, Secure and Confidential</p>
+          </div>
+
+        </form>
+      </section>
+    </dialog>
+
   </body>
 </html>
